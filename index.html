@@ -324,6 +324,9 @@ Accueil
 <a href="#packs" class="hover:text-sky-600 transition">
 Nos Packs
 </a>
+<a href="#services" class="hover:text-sky-600 transition">
+Services
+</a>
 
 <a href="#pro-section" class="hover:text-sky-600 transition">
 Expérience Pro
@@ -389,6 +392,9 @@ Accueil
 
 <a href="#packs" class="block py-2 text-slate-600 font-medium">
 Nos Packs
+</a>
+<a href="#services" class="block py-2 text-slate-600 font-medium">
+Services
 </a>
 
 <a href="#pro-section" class="block py-2 text-slate-600 font-medium">
@@ -539,11 +545,11 @@ Réserver sur WhatsApp
 <div>
 
 <span class="block text-2xl font-bold text-amber-400">
-+1500
+3
 </span>
 
 <span class="text-xs text-slate-400">
-Clients Satisfaits
+Packs de Lavage
 </span>
 
 </div>
@@ -1248,6 +1254,73 @@ Envoyez votre quartier, le modèle du véhicule et le pack souhaité sur WhatsAp
 
 
 
+
+<!-- LIENS SERVICES : pages spécialisées / réservation -->
+<section id="services" class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-12">
+      <span class="text-sky-700 text-sm font-bold uppercase tracking-wider">Nos prestations</span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3">Lavage et nettoyage de voiture à domicile à Casablanca</h2>
+      <p class="mt-4 text-slate-600">Un nettoyage d'entretien ou un lavage en profondeur ? Découvrez le détail de nos prestations avant de choisir votre pack.</p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-6">
+      <article class="rounded-3xl p-8 bg-sky-50 border border-sky-100">
+        <div class="w-12 h-12 flex items-center justify-center rounded-2xl bg-sky-600 text-white text-2xl mb-5"><i class="fa-solid fa-car-side" aria-hidden="true"></i></div>
+        <h3 class="text-2xl font-extrabold text-slate-900">Nettoyage intérieur de voiture</h3>
+        <p class="text-slate-600 mt-3 leading-relaxed">Aspiration, dépoussiérage, soin des plastiques et, dans le pack VIP, shampouinage des sièges et moquettes. Découvrez les différences entre les formules.</p>
+        <a href="/nettoyage-interieur-voiture-casablanca/" class="inline-flex items-center mt-6 text-sky-700 font-extrabold underline underline-offset-4">Découvrir le nettoyage intérieur <span aria-hidden="true" class="ml-2">→</span></a>
+      </article>
+      <article class="rounded-3xl p-8 bg-amber-50 border border-amber-100">
+        <div class="w-12 h-12 flex items-center justify-center rounded-2xl bg-amber-500 text-slate-900 text-2xl mb-5"><i class="fa-solid fa-spray-can-sparkles" aria-hidden="true"></i></div>
+        <h3 class="text-2xl font-extrabold text-slate-900">Lavage VIP Complet</h3>
+        <p class="text-slate-600 mt-3 leading-relaxed">Nettoyage intérieur et extérieur approfondi : shampouinage, soin du cuir, décontamination extérieure et cire protectrice. Pack VIP à 800 DH.</p>
+        <a href="/lavage-complet-voiture-casablanca/" class="inline-flex items-center mt-6 text-amber-800 font-extrabold underline underline-offset-4">Découvrir le lavage complet <span aria-hidden="true" class="ml-2">→</span></a>
+      </article>
+    </div>
+  </div>
+</section>
+<section id="reservation" class="py-20 bg-sky-50 border-y border-sky-100">
+  <div class="max-w-5xl mx-auto px-4">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <span class="text-sky-700 font-bold uppercase tracking-wider text-sm">Réservation facile</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3">Réservez un lavage à domicile à Casablanca</h2>
+        <p class="mt-4 text-slate-600 leading-relaxed">Pas de compte à créer. Choisissez votre pack, indiquez votre quartier et le véhicule, puis envoyez la demande sur WhatsApp. Notre équipe vous confirme la disponibilité.</p>
+        <ol class="mt-7 space-y-3 text-slate-700 font-medium">
+          <li><span class="text-sky-700 font-extrabold">1.</span> Choisissez votre formule de lavage.</li>
+          <li><span class="text-sky-700 font-extrabold">2.</span> Précisez le quartier et le modèle de voiture.</li>
+          <li><span class="text-sky-700 font-extrabold">3.</span> Recevez la confirmation du rendez-vous sur WhatsApp.</li>
+        </ol>
+        <p class="mt-6 text-sm text-slate-600">Par téléphone : <a href="tel:+212661389143" class="font-bold text-sky-700 underline">06 61 38 91 43</a></p>
+      </div>
+      <form id="booking-form" class="bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-slate-200 space-y-5">
+        <div>
+          <label for="booking-pack" class="block font-bold text-sm text-slate-700 mb-2">Pack de lavage *</label>
+          <select id="booking-pack" name="pack" required class="w-full p-3.5 rounded-xl border border-slate-300 bg-white text-slate-900">
+            <option value="Lavage Normal - 100 DH">Normal — 100 DH</option>
+            <option value="Lavage Pro Gold - 150 DH">Pro Gold — 150 DH</option>
+            <option value="Lavage VIP Complet - 800 DH">VIP Complet — 800 DH</option>
+          </select>
+        </div>
+        <div>
+          <label for="booking-quartier" class="block font-bold text-sm text-slate-700 mb-2">Votre quartier à Casablanca *</label>
+          <input id="booking-quartier" name="quartier" required maxlength="100" placeholder="Ex. Maarif, Anfa, Oasis..." class="w-full p-3.5 rounded-xl border border-slate-300" autocomplete="address-level3">
+        </div>
+        <div>
+          <label for="booking-vehicle" class="block font-bold text-sm text-slate-700 mb-2">Modèle de la voiture *</label>
+          <input id="booking-vehicle" name="vehicle" required maxlength="100" placeholder="Ex. Dacia Logan, BMW X5..." class="w-full p-3.5 rounded-xl border border-slate-300">
+        </div>
+        <div>
+          <label for="booking-date" class="block font-bold text-sm text-slate-700 mb-2">Jour souhaité (facultatif)</label>
+          <input id="booking-date" name="date" type="date" class="w-full p-3.5 rounded-xl border border-slate-300 bg-white">
+        </div>
+        <button type="submit" class="w-full py-4 bg-emerald-600 hover:bg-emerald-700 rounded-xl text-white font-extrabold transition">Envoyer ma demande sur WhatsApp</button>
+        <p class="text-slate-500 text-xs">Vous serez redirigé vers WhatsApp pour envoyer votre message. Aucun paiement n'est demandé ici. La réservation est confirmée par notre équipe.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
 <!-- LOCAL SEO -->
 
 <section id="zones" class="py-16 bg-slate-900 text-white">
@@ -1661,6 +1734,13 @@ Lavage VIP Complet (800 DH)
 
 </div>
 
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-7 text-center text-xs text-slate-500">
+  <a href="/nettoyage-interieur-voiture-casablanca/" class="hover:text-white underline underline-offset-4">Nettoyage intérieur voiture Casablanca</a>
+  <span class="mx-2">·</span>
+  <a href="/lavage-complet-voiture-casablanca/" class="hover:text-white underline underline-offset-4">Lavage complet voiture Casablanca</a>
+  <span class="mx-2">·</span>
+  <a href="#reservation" class="hover:text-white underline underline-offset-4">Réserver</a>
+</div>
 </footer>
 
 
@@ -1694,6 +1774,26 @@ menuBtn.addEventListener('click', () => {
 
 });
 
+const bookingForm = document.getElementById('booking-form');
+if (bookingForm) {
+  bookingForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    if (!bookingForm.reportValidity()) return;
+    const pack = document.getElementById('booking-pack').value;
+    const quartier = document.getElementById('booking-quartier').value.trim();
+    const voiture = document.getElementById('booking-vehicle').value.trim();
+    const date = document.getElementById('booking-date').value;
+    const message = [
+      'Bonjour Lavage Daba, je souhaite réserver un lavage à domicile à Casablanca.',
+      'Pack : ' + pack,
+      'Quartier : ' + quartier,
+      'Voiture : ' + voiture,
+      'Jour souhaité : ' + (date || 'À confirmer'),
+      'Merci de me confirmer vos disponibilités.'
+    ].join('\\n');
+    window.location.href = 'https://wa.me/212661389143?text=' + encodeURIComponent(message);
+  });
+}
 </script>
 
 
