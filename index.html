@@ -347,7 +347,8 @@ Contact
 </nav>
 
 
-<div class="flex items-center space-x-4">
+<div class="flex items-center space-x-2 sm:space-x-4">
+<a href="tel:+212661389143" aria-label="Appeler Lavage Daba" class="sm:hidden inline-flex justify-center items-center text-sky-700 bg-sky-50 border border-sky-100 rounded-xl w-10 h-10"><i class="fa-solid fa-phone" aria-hidden="true"></i></a>
 
 <a
 href="https://wa.me/212661389143?text=Bonjour%2C%20je%20souhaite%20réserver%20un%20lavage%20auto%20à%20domicile%20à%20Casablanca."
@@ -442,7 +443,7 @@ WhatsApp: 06 61 38 91 43
 
 <section
 id="accueil"
-class="hero-bg text-white py-24 lg:py-32 relative overflow-hidden"
+class="hero-bg text-white py-12 sm:py-24 lg:py-32 relative overflow-hidden"
 >
 
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -493,7 +494,8 @@ Nous intervenons notamment à Maarif, Anfa, Ain Diab, Sidi Maarouf, Oasis, CIL, 
 </p>
 
 
-<div class="flex flex-col sm:flex-row gap-4 pt-4">
+<p class="text-sm font-semibold text-amber-300">Normal 100 DH · Pro Gold 150 DH · VIP 800 DH</p>
+<div class="flex flex-col sm:flex-row gap-3 pt-3">
 
 
 <a
@@ -503,7 +505,7 @@ class="bg-sky-600 hover:bg-sky-500 text-white font-bold px-8 py-4 rounded-2xl sh
 
 <i class="fa-solid fa-list-check mr-2"></i>
 
-Voir nos 3 Packs
+Voir les tarifs dès 100 DH
 
 </a>
 
@@ -588,7 +590,7 @@ src="https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?auto=format&fit=c
 alt="Lavage auto à domicile à Casablanca"
 width="1000"
 height="667"
-class="w-full h-80 sm:h-96 object-cover rounded-2xl"
+class="w-full h-72 sm:h-96 object-cover rounded-2xl"
 fetchpriority="high"
 decoding="async"
 >
@@ -1752,6 +1754,13 @@ Lavage VIP Complet (800 DH)
 
 
 
+<!-- MOBILE CTAs -->
+<div class="sm:hidden fixed bottom-0 inset-x-0 z-50 bg-white/95 backdrop-blur-md border-t border-slate-200 p-3 pb-[max(12px,env(safe-area-inset-bottom))] shadow-2xl flex gap-2" role="navigation" aria-label="Réservation rapide">
+<a href="tel:+212661389143" class="flex-1 inline-flex items-center justify-center gap-2 rounded-xl bg-sky-700 text-white font-bold py-3.5 text-sm"><i class="fa-solid fa-phone" aria-hidden="true"></i> Appeler</a>
+<a href="https://wa.me/212661389143?text=Bonjour%2C%20je%20veux%20r%C3%A9server%20un%20lavage%20%C3%A0%20domicile%20%C3%A0%20Casablanca." target="_blank" rel="noopener noreferrer" class="flex-[1.4] inline-flex items-center justify-center gap-2 rounded-xl bg-emerald-600 text-white font-bold py-3.5 text-sm"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Réserver WhatsApp</a>
+</div>
+<div class="h-20 sm:hidden" aria-hidden="true"></div>
+
 <!-- WHATSAPP FLOATING -->
 
 <a
@@ -1759,7 +1768,7 @@ href="https://wa.me/212661389143?text=Bonjour%2C%20je%20souhaite%20réserver%20u
 target="_blank"
 rel="noopener noreferrer"
 aria-label="Réserver un lavage auto à domicile sur WhatsApp"
-class="fixed bottom-6 right-6 z-50 bg-emerald-600 hover:bg-emerald-500 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-2xl whatsapp-pulse transition"
+class="hidden sm:flex fixed bottom-6 right-6 z-50 bg-emerald-600 hover:bg-emerald-500 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-2xl whatsapp-pulse transition"
 >
 
 <i class="fa-brands fa-whatsapp text-3xl"></i>
