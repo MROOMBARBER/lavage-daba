@@ -1,0 +1,23 @@
+/* Lavage Daba immersive layer — progressive enhancement */
+:root{--ld-ink:#071426;--ld-cyan:#67e8f9;--ld-ease:cubic-bezier(.22,1,.36,1)}
+html{scroll-padding-top:88px}body{overflow-x:clip}
+::selection{background:#7dd3fc;color:#082f49}
+.ld-stage{position:relative;isolation:isolate}
+.ld-stage:before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 55% 20%,rgba(76,201,240,.14),transparent 42%);z-index:1}
+.ld-bubbles{position:absolute;inset:0;width:100%;height:100%;z-index:4;pointer-events:none}
+.ld-bubbles.is-interactive{pointer-events:auto;cursor:crosshair;touch-action:pan-y}
+.ld-bubble-hint{position:absolute;bottom:18px;right:16px;z-index:5;background:rgba(3,12,24,.65);border:1px solid rgba(255,255,255,.3);color:white;padding:8px 12px;border-radius:999px;font-size:12px;pointer-events:none;backdrop-filter:blur(8px)}
+.ld-stage img{transform-origin:center center;transition:transform .8s var(--ld-ease);will-change:auto}
+.ld-stage:hover img{transform:scale(1.035)}
+.ld-stage .ld-wash-sheen{position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(110deg,transparent 20%,rgba(255,255,255,.13) 45%,transparent 65%);transform:translateX(-110%);opacity:0}
+.ld-stage.is-washing .ld-wash-sheen{animation:ld-sheen 1.25s ease both}
+@keyframes ld-sheen{10%{opacity:1}100%{transform:translateX(110%);opacity:0}}
+.ld-reveal{opacity:1}
+.ld-words .ld-word{display:inline-block;white-space:pre}
+.ld-magnetic{--tx:0px;--ty:0px;transform:translate(var(--tx),var(--ty));transition:transform .28s var(--ld-ease),box-shadow .25s}
+.ld-magnetic:hover{box-shadow:0 13px 38px rgba(14,165,233,.23)}
+.ld-glass{backdrop-filter:blur(16px);background:rgba(2,6,23,.82)}
+.ld-progress{position:fixed;inset:0 auto auto 0;height:3px;z-index:100;transform-origin:left;transform:scaleX(0);background:linear-gradient(90deg,#38bdf8,#34d399,#fbbf24);width:100%;pointer-events:none}
+.ld-cinema-note{position:absolute;left:16px;bottom:16px;color:rgba(255,255,255,.8);font-size:11px;z-index:5;pointer-events:none;text-shadow:0 1px 6px #000}
+@media (hover:none),(pointer:coarse){.ld-stage:hover img{transform:none}.ld-bubble-hint{display:none}.ld-bubbles{pointer-events:none!important}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.ld-progress,.ld-bubbles,.ld-bubble-hint{display:none!important}.ld-stage img{transform:none!important}.ld-reveal{opacity:1!important;transform:none!important}}
