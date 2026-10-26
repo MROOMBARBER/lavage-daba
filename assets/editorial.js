@@ -43,6 +43,13 @@ if(!narrow.matches&&!saveData){try{await loadScript('https://cdn.jsdelivr.net/np
 }
 if('requestIdleCallback'in window)requestIdleCallback(motion,{timeout:1500});else setTimeout(motion,450);
 function magnetic(){if(narrow.matches||!motionOK||!matchMedia('(hover:hover)').matches)return;$$('.ld-btn').forEach(el=>{el.addEventListener('pointermove',e=>{const r=el.getBoundingClientRect();el.style.transform='translate('+((e.clientX-r.left-r.width/2)*.11)+'px,'+((e.clientY-r.top-r.height/2)*.11)+'px)'});el.addEventListener('pointerleave',()=>{el.style.transform='translate(0,0)'})})}magnetic();
+
+// Minimal scroll progress and cinematic internal-navigation curtain.
+// Navigation always works without this enhancement; no animations for reduced motion.
+const progress=document.createElement('div');progress.className='ld-reading-progress';progress.setAttribute('aria-hidden','true');document.body.append(progress);
+let progressBusy=false;addEventListener('scroll',()=>{if(progressBusy)return;progressBusy=true;requestAnimationFrame(()=>{const max=document.documentElement.scrollHeight-innerHeight;progress.style.transform='scaleX('+(max>0?Math.min(1,scrollY/max):0)+')';progressBusy=false})},{passive:true});
+if(motionOK){const curtain=document.createElement('div');curtain.className='ld-page-curtain';curtain.setAttribute('aria-hidden','true');document.body.append(curtain);document.addEventListener('click',event=>{const a=event.target.closest('a[href]');if(!a||event.defaultPrevented||event.button!==0||event.metaKey||event.ctrlKey||event.shiftKey||event.altKey||a.hasAttribute('download')||a.target&&a.target!=='_self')return;const dest=new URL(a.href,location.href);if(dest.origin!==location.origin||dest.pathname===location.pathname||dest.search!==location.search)return;event.preventDefault();curtain.classList.add('ld-curtain-on');setTimeout(()=>{location.href=dest.href},300)})}
+
 const lab=$('.ld-product-3d');if(!lab)return;
 whenVisible(lab,async()=>{if(reduceAnimations()||narrow.matches||!('WebGLRenderingContext'in window))return;
 try{await loadScript('https://cdnjs.cloudflare.com/ajax/libs/three.js/0.150.1/three.min.js');const THREE=window.THREE;if(!THREE)return;
