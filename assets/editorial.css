@@ -70,3 +70,14 @@ body.ld-editorial{background:var(--cream);overflow-x:clip}
 .ld-page-curtain{position:fixed;inset:0;z-index:120;pointer-events:none;background:#07111f;clip-path:inset(100% 0 0 0);transition:clip-path .38s cubic-bezier(.76,0,.24,1)}
 .ld-page-curtain.ld-curtain-on{clip-path:inset(0 0 0 0)}
 @media(prefers-reduced-motion:reduce){.ld-page-curtain{display:none}.ld-reading-progress{display:none}}
+
+/* Quick access to prices from the mobile homepage hero. */
+.ld-editorial #packs{scroll-margin-top:92px}
+.ld-editorial .ld-price-jump{display:none;text-decoration:none}
+@media(max-width:639px){
+  .ld-editorial #accueil .ld-priced{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:9px;margin-top:24px}
+  .ld-editorial #accueil .ld-priced > span{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;column-gap:5px;min-width:0;min-height:48px;padding:9px 8px;text-align:center;line-height:1.25;font-size:clamp(11px,3.1vw,14px)}
+  .ld-editorial #accueil .ld-price-jump{display:flex;align-items:center;justify-content:center;gap:7px;min-height:48px;padding:9px 8px;border-radius:100px;background:var(--acid);color:#07111f;font-size:clamp(11px,3.1vw,14px);font-weight:900;line-height:1.2;text-align:center;box-shadow:0 8px 30px rgba(201,250,85,.25)}
+  .ld-editorial #accueil .ld-price-jump:active{transform:scale(.97)}
+  .ld-editorial #accueil .ld-price-jump:focus-visible{outline:3px solid #fff;outline-offset:3px}
+}
