@@ -1148,7 +1148,27 @@ Envoyez votre quartier, le modèle du véhicule et le pack souhaité sur WhatsAp
         </div>
         <div>
           <label for="booking-vehicle" class="block font-bold text-sm text-slate-700 mb-2">Modèle de la voiture *</label>
-          <input id="booking-vehicle" name="vehicle" required maxlength="100" placeholder="Ex. Dacia Logan, BMW X5..." class="w-full p-3.5 rounded-xl border border-slate-300">
+          <select id="booking-vehicle" name="vehicle" required aria-controls="booking-vehicle-other-wrap" class="w-full p-3.5 rounded-xl border border-slate-300 bg-white text-slate-900">
+<option value="" disabled selected>Choisissez votre voiture</option>
+<optgroup label="Porsche"><option value="Porsche 911">Porsche 911</option><option value="Porsche Cayenne">Porsche Cayenne</option><option value="Porsche Cayenne Coupé">Porsche Cayenne Coupé</option><option value="Porsche Macan">Porsche Macan</option><option value="Porsche Panamera">Porsche Panamera</option><option value="Porsche Taycan">Porsche Taycan</option></optgroup>
+<optgroup label="Ferrari"><option value="Ferrari 296 GTB">Ferrari 296 GTB</option><option value="Ferrari 488">Ferrari 488</option><option value="Ferrari F8 Tributo">Ferrari F8 Tributo</option><option value="Ferrari Roma">Ferrari Roma</option><option value="Ferrari SF90">Ferrari SF90</option><option value="Ferrari Purosangue">Ferrari Purosangue</option></optgroup>
+<optgroup label="Lamborghini"><option value="Lamborghini Urus">Lamborghini Urus</option><option value="Lamborghini Huracán">Lamborghini Huracán</option><option value="Lamborghini Revuelto">Lamborghini Revuelto</option><option value="Lamborghini Aventador">Lamborghini Aventador</option></optgroup>
+<optgroup label="Mercedes-Benz"><option value="Mercedes-Benz Classe S">Mercedes-Benz Classe S</option><option value="Mercedes-Benz Classe G">Mercedes-Benz Classe G</option><option value="Mercedes-Benz G63 AMG">Mercedes-Benz G63 AMG</option><option value="Mercedes-Benz GLE Coupé">Mercedes-Benz GLE Coupé</option><option value="Mercedes-Benz AMG GT">Mercedes-Benz AMG GT</option><option value="Mercedes-Benz Maybach">Mercedes-Benz Maybach</option></optgroup>
+<optgroup label="BMW"><option value="BMW M3">BMW M3</option><option value="BMW M4">BMW M4</option><option value="BMW M5">BMW M5</option><option value="BMW M8">BMW M8</option><option value="BMW X5 M">BMW X5 M</option><option value="BMW X6 M">BMW X6 M</option><option value="BMW XM">BMW XM</option><option value="BMW Série 7">BMW Série 7</option></optgroup>
+<optgroup label="Audi"><option value="Audi RS3">Audi RS3</option><option value="Audi RS5">Audi RS5</option><option value="Audi RS6">Audi RS6</option><option value="Audi RS7">Audi RS7</option><option value="Audi RS Q8">Audi RS Q8</option><option value="Audi R8">Audi R8</option><option value="Audi e-tron GT">Audi e-tron GT</option></optgroup>
+<optgroup label="Range Rover"><option value="Range Rover Sport">Range Rover Sport</option><option value="Range Rover Vogue">Range Rover Vogue</option><option value="Range Rover Autobiography">Range Rover Autobiography</option><option value="Range Rover Defender">Range Rover Defender</option></optgroup>
+<optgroup label="Bentley"><option value="Bentley Bentayga">Bentley Bentayga</option><option value="Bentley Continental GT">Bentley Continental GT</option><option value="Bentley Flying Spur">Bentley Flying Spur</option></optgroup>
+<optgroup label="Rolls-Royce"><option value="Rolls-Royce Cullinan">Rolls-Royce Cullinan</option><option value="Rolls-Royce Ghost">Rolls-Royce Ghost</option><option value="Rolls-Royce Phantom">Rolls-Royce Phantom</option><option value="Rolls-Royce Spectre">Rolls-Royce Spectre</option></optgroup>
+<optgroup label="Aston Martin"><option value="Aston Martin DB11">Aston Martin DB11</option><option value="Aston Martin DB12">Aston Martin DB12</option><option value="Aston Martin Vantage">Aston Martin Vantage</option><option value="Aston Martin DBX">Aston Martin DBX</option></optgroup>
+<optgroup label="Maserati"><option value="Maserati Ghibli">Maserati Ghibli</option><option value="Maserati Levante">Maserati Levante</option><option value="Maserati Grecale">Maserati Grecale</option><option value="Maserati MC20">Maserati MC20</option></optgroup>
+<optgroup label="McLaren"><option value="McLaren 570S">McLaren 570S</option><option value="McLaren 720S">McLaren 720S</option><option value="McLaren 750S">McLaren 750S</option><option value="McLaren Artura">McLaren Artura</option></optgroup>
+<optgroup label="Jaguar"><option value="Jaguar F-Type">Jaguar F-Type</option><option value="Jaguar F-Pace">Jaguar F-Pace</option><option value="Jaguar XJ">Jaguar XJ</option></optgroup>
+<option value="Autre">Autre (préciser le modèle)</option>
+</select>
+<div id="booking-vehicle-other-wrap" class="mt-3" hidden>
+<label for="booking-vehicle-other" class="block font-semibold text-sm text-slate-700 mb-2">Précisez la marque et le modèle *</label>
+<input id="booking-vehicle-other" name="autre-voiture" maxlength="100" placeholder="Ex. Porsche 718 Cayman..." class="w-full p-3.5 rounded-xl border border-slate-300" disabled>
+</div>
         </div>
         <button type="submit" class="w-full py-4 bg-emerald-600 hover:bg-emerald-700 rounded-xl text-white font-extrabold transition">Envoyer ma demande sur WhatsApp</button>
         <p class="text-slate-500 text-xs">Vous serez redirigé vers WhatsApp pour envoyer votre message. Aucun paiement n'est demandé ici. La réservation est confirmée par notre équipe.</p>
@@ -1640,13 +1660,26 @@ if (bookingForm) {
   }
   quartierSelect.addEventListener('change', syncOtherQuartier);
   syncOtherQuartier();
+  const vehicleSelect = document.getElementById('booking-vehicle');
+  const vehicleOtherWrap = document.getElementById('booking-vehicle-other-wrap');
+  const vehicleOtherInput = document.getElementById('booking-vehicle-other');
+  function syncOtherVehicle() {
+    const isOther = vehicleSelect.value === 'Autre';
+    vehicleOtherWrap.hidden = !isOther;
+    vehicleOtherInput.disabled = !isOther;
+    vehicleOtherInput.required = isOther;
+    if (!isOther) vehicleOtherInput.value = '';
+  }
+  vehicleSelect.addEventListener('change', syncOtherVehicle);
+  syncOtherVehicle();
   bookingForm.addEventListener('submit', (event) => {
     event.preventDefault();
     if (!bookingForm.reportValidity()) return;
     const pack = document.getElementById('booking-pack').value;
     const quartier = quartierSelect.value === 'Autre' ? otherInput.value.trim() : quartierSelect.value;
-    const voiture = document.getElementById('booking-vehicle').value.trim();
+    const voiture = vehicleSelect.value === 'Autre' ? vehicleOtherInput.value.trim() : vehicleSelect.value;
     if (!quartier) { otherInput.focus(); return; }
+    if (!voiture) { vehicleOtherInput.focus(); return; }
     const message = [
       'Bonjour Lavage Daba, je souhaite réserver un lavage à domicile à Casablanca.',
       'Pack : ' + pack,
