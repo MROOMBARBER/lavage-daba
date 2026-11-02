@@ -1,0 +1,9 @@
+/* Lavage Daba editorial market strip; static readable fallback when motion is reduced. */
+.ld-market-ticker{height:33px;display:flex;align-items:center;overflow:hidden;width:100%;position:relative;z-index:52;background:#07111f;color:#d4ff71;border-bottom:1px solid #243a3b;font-family:Inter,Arial,sans-serif}
+.ld-market-ticker__track{display:flex;align-items:center;width:max-content;max-width:none;animation:ldTicker 34s linear infinite;will-change:transform}
+.ld-market-ticker__set{display:flex;flex-shrink:0;align-items:center;gap:27px;white-space:nowrap;padding-right:27px}
+.ld-market-ticker__set span{font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;display:inline-flex;align-items:center;gap:27px}
+.ld-market-ticker__set span::after{content:"✦";font-size:9px;color:#f8c276}
+@keyframes ldTicker{to{transform:translateX(-50%)}}
+@media(hover:hover){.ld-market-ticker:hover .ld-market-ticker__track{animation-play-state:paused}}
+@media(prefers-reduced-motion:reduce){.ld-market-ticker__track{animation:none!important;will-change:auto}.ld-market-ticker{overflow-x:auto}}

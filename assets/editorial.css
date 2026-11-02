@@ -154,3 +154,23 @@ body.ld-editorial{background:var(--cream);overflow-x:clip}
 .ld-editorial #accueil .ld-hero-conversion button.ld-tarifs-fire span{width:24px;height:24px}
 @media(max-width:639px){.ld-editorial #accueil .ld-hero-conversion{max-width:none;gap:10px;margin-top:26px}.ld-editorial #accueil .ld-hero-conversion .ld-hero-wa{min-height:52px;font-size:15px}.ld-editorial #accueil .ld-hero-conversion button.ld-tarifs-fire{min-height:52px;font-size:15px}}
 @media(prefers-reduced-motion:reduce){.ld-editorial #accueil .ld-hero-wa{transition:none}}
+
+/* Above-the-fold conversion repair: keep BOTH hero actions visible on mobile. */
+@media(max-width:780px){
+ body.ld-editorial #accueil .ld-hero-photo{height:clamp(168px,28svh,230px)!important}
+ body.ld-editorial #accueil .ld-hero-content{padding:0 18px 28px!important;margin-top:-13px!important;min-height:0!important}
+ body.ld-editorial #accueil .ld-kicker{font-size:9px!important;letter-spacing:.16em!important;margin-bottom:9px!important}
+ body.ld-editorial #accueil h1{font-size:clamp(2.05rem,8vw,3.15rem)!important;line-height:1.02!important;letter-spacing:-.053em!important}
+ body.ld-editorial #accueil .ld-hero-lede{font-size:clamp(12px,3.4vw,15px)!important;line-height:1.4!important;margin-top:11px!important;max-width:600px}
+ body.ld-editorial #accueil .ld-hero-conversion{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important;max-width:none!important;width:100%!important;margin-top:15px!important;align-items:stretch!important}
+ body.ld-editorial #accueil .ld-hero-conversion .ld-hero-wa{display:flex!important;min-width:0!important;width:100%!important;min-height:49px!important;font-size:clamp(10px,2.75vw,13px)!important;padding:8px 7px!important;border-radius:10px!important;text-align:center!important;line-height:1.2!important;gap:4px!important}
+ body.ld-editorial #accueil .ld-hero-conversion .ld-tarifs-cta-wrap{width:100%!important;margin:0!important;display:block!important;min-width:0!important}
+ body.ld-editorial #accueil .ld-hero-conversion .ld-fire-button-frame{width:100%!important;max-width:none!important;display:flex!important;box-sizing:border-box!important}
+ body.ld-editorial #accueil .ld-hero-conversion button.ld-tarifs-fire{width:100%!important;min-width:0!important;min-height:43px!important;font-size:clamp(10px,2.75vw,13px)!important;padding:8px 7px!important;border-radius:8px!important;letter-spacing:0!important;gap:6px!important}
+ body.ld-editorial #accueil .ld-hero-conversion button.ld-tarifs-fire span{width:19px!important;height:19px!important;flex-shrink:0!important}
+ body.ld-editorial #accueil .ld-scroll-cue{display:none!important}
+}
+@media(max-width:365px){
+ body.ld-editorial #accueil .ld-hero-conversion .ld-hero-wa{font-size:10px!important}
+ body.ld-editorial #accueil .ld-hero-conversion button.ld-tarifs-fire{font-size:10px!important}
+}
