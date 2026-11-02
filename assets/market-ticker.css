@@ -1,0 +1,28 @@
+/* Lavage Daba — global market-style services ribbon + visible mobile hero CTAs */
+.ld-market-ticker{position:relative;z-index:30;overflow:hidden;width:100%;background:#071426;color:#eaffad;border-block:1px solid rgba(201,250,85,.3);height:35px;display:flex;align-items:center;font-family:Inter,Arial,sans-serif}
+.ld-market-ticker__track{width:max-content;display:flex;white-space:nowrap;flex:none;animation:ld-market-drift 32s linear infinite}
+.ld-market-ticker__set{display:flex;align-items:center;gap:0;flex:none}
+.ld-market-ticker__set span{font-size:11px;font-weight:800;letter-spacing:.065em;text-transform:uppercase;padding:0 19px}
+.ld-market-ticker__set span:after{content:"✦";color:#69dfc6;opacity:.85;padding-left:38px}
+.ld-market-ticker:hover .ld-market-ticker__track,.ld-market-ticker:focus-within .ld-market-ticker__track{animation-play-state:paused}
+@keyframes ld-market-drift{to{transform:translateX(-50%)}}
+.ld-editorial #accueil .ld-hero-conversion{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));align-items:stretch;gap:10px;margin-top:22px;max-width:510px;width:100%}
+.ld-editorial #accueil .ld-hero-conversion .ld-hero-wa,
+.ld-editorial #accueil .ld-hero-conversion .ld-tarifs-cta-wrap{width:100%;min-width:0;margin:0}
+.ld-editorial #accueil .ld-hero-conversion .ld-fire-button-frame{width:100%;height:100%;padding:3px}
+.ld-editorial #accueil .ld-hero-conversion .ld-hero-wa,
+.ld-editorial #accueil .ld-hero-conversion button.ld-tarifs-fire{min-width:0;width:100%;min-height:55px;height:100%;padding:9px 11px;border-radius:10px;font-size:clamp(12px,2.8vw,15px);font-weight:800;line-height:1.23;letter-spacing:0;text-align:center;white-space:normal;box-sizing:border-box}
+.ld-editorial #accueil .ld-hero-conversion .ld-hero-wa{box-shadow:0 5px 17px #00874455}
+.ld-editorial #accueil .ld-hero-conversion button.ld-tarifs-fire span{width:20px;height:20px;flex:none}
+@media(max-width:780px){
+ .ld-editorial #accueil .ld-hero-photo{height:clamp(175px,28svh,225px)}
+ .ld-editorial #accueil .ld-hero-content{margin-top:-16px;padding:0 18px 36px}
+ .ld-editorial #accueil .ld-hero-content .ld-kicker{margin-bottom:9px;font-size:10px}
+ .ld-editorial #accueil .ld-hero-content h1{font-size:clamp(2.15rem,7.4vw,3.2rem);line-height:1.02}
+ .ld-editorial #accueil .ld-hero-content .ld-hero-lede{margin-top:13px;font-size:clamp(13px,3.4vw,16px);line-height:1.5}
+ .ld-editorial #accueil .ld-hero-conversion{margin-top:17px;gap:8px}
+ .ld-editorial #accueil .ld-hero-conversion .ld-hero-wa,
+ .ld-editorial #accueil .ld-hero-conversion button.ld-tarifs-fire{min-height:51px;font-size:clamp(11px,3vw,14px);padding:9px 7px}
+}
+@media(max-width:360px){.ld-editorial #accueil .ld-hero-conversion .ld-hero-wa,.ld-editorial #accueil .ld-hero-conversion button.ld-tarifs-fire{font-size:11px}}
+@media(prefers-reduced-motion:reduce){.ld-market-ticker__track{animation:none!important}.ld-market-ticker{overflow-x:auto;scrollbar-width:thin}}
