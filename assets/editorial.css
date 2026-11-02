@@ -81,3 +81,12 @@ body.ld-editorial{background:var(--cream);overflow-x:clip}
   .ld-editorial #accueil .ld-price-jump:active{transform:scale(.97)}
   .ld-editorial #accueil .ld-price-jump:focus-visible{outline:3px solid #fff;outline-offset:3px}
 }
+
+/* Single clear hero action: tariff details instead of prices upfront. */
+.ld-editorial .ld-tarifs-cta-wrap{display:flex;margin-top:32px}
+.ld-editorial .ld-tarifs-cta{display:inline-flex;align-items:center;justify-content:center;gap:22px;min-height:58px;padding:17px 28px;background:var(--acid);color:#07111f;border-radius:999px;text-decoration:none;font-size:15px;font-weight:900;box-shadow:0 12px 36px rgba(201,250,85,.18);transition:transform .2s ease,background .2s ease}
+.ld-editorial .ld-tarifs-cta:hover{background:#e5ff95;transform:translateY(-2px)}
+.ld-editorial .ld-tarifs-cta:focus-visible{outline:3px solid #fff;outline-offset:4px}
+.ld-editorial .ld-tarifs-cta span{display:grid;place-items:center;width:29px;height:29px;border:1px solid #07111f55;border-radius:100%}
+@media(max-width:639px){.ld-editorial .ld-tarifs-cta-wrap{margin-top:27px}.ld-editorial .ld-tarifs-cta{width:100%;min-height:58px;font-size:16px}}
+@media(prefers-reduced-motion:reduce){.ld-editorial .ld-tarifs-cta{transition:none}}
