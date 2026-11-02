@@ -90,3 +90,9 @@ body.ld-editorial{background:var(--cream);overflow-x:clip}
 .ld-editorial .ld-tarifs-cta span{display:grid;place-items:center;width:29px;height:29px;border:1px solid #07111f55;border-radius:100%}
 @media(max-width:639px){.ld-editorial .ld-tarifs-cta-wrap{margin-top:27px}.ld-editorial .ld-tarifs-cta{width:100%;min-height:58px;font-size:16px}}
 @media(prefers-reduced-motion:reduce){.ld-editorial .ld-tarifs-cta{transition:none}}
+
+/* Prominent genuine button for the first-screen tariff action. */
+.ld-editorial button.ld-tarifs-cta{appearance:none;border:2px solid #dbff8c;border-radius:16px;min-height:64px;background:#c9fa55;color:#07111f;cursor:pointer;font-size:17px;font-weight:900;box-shadow:0 10px 0 rgba(17,31,27,.45),0 18px 42px rgba(201,250,85,.25)}
+.ld-editorial button.ld-tarifs-cta:hover{background:#dcff87;transform:translateY(-2px)}
+.ld-editorial button.ld-tarifs-cta:active{transform:translateY(2px);box-shadow:0 4px 0 rgba(17,31,27,.45),0 8px 18px rgba(201,250,85,.18)}
+@media(max-width:639px){.ld-editorial button.ld-tarifs-cta{width:100%;border-radius:16px;min-height:66px;font-size:18px}}
