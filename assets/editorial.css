@@ -142,3 +142,15 @@ body.ld-editorial{background:var(--cream);overflow-x:clip}
 @media(prefers-reduced-motion:reduce){
  .ld-editorial .ld-fire-button-frame,.ld-editorial .ld-best-seller:before,.ld-editorial .ld-best-seller:after{animation:none!important}
 }
+
+/* Compact conversion buttons: WhatsApp first, tariffs second */
+.ld-editorial #accueil .ld-hero-conversion{display:flex;flex-direction:column;align-items:flex-start;gap:12px;margin-top:28px;width:min(100%,360px)}
+.ld-editorial #accueil .ld-hero-conversion .ld-tarifs-cta-wrap{margin-top:0;width:100%}
+.ld-editorial #accueil .ld-hero-conversion .ld-fire-button-frame{width:100%}
+.ld-editorial #accueil .ld-hero-conversion .ld-hero-wa{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;min-height:51px;padding:12px 17px;border-radius:12px;background:#10b967;color:#fff;font-size:15px;font-weight:800;line-height:1.25;text-decoration:none;box-shadow:0 9px 25px #058c4b40;transition:background .2s,transform .2s}
+.ld-editorial #accueil .ld-hero-conversion .ld-hero-wa:hover{background:#079956;transform:translateY(-2px)}
+.ld-editorial #accueil .ld-hero-conversion .ld-hero-wa:focus-visible{outline:3px solid #fff;outline-offset:4px}
+.ld-editorial #accueil .ld-hero-conversion button.ld-tarifs-fire{min-width:0;width:100%;min-height:51px;padding:12px 18px;font-size:15px;letter-spacing:0;border-radius:10px}
+.ld-editorial #accueil .ld-hero-conversion button.ld-tarifs-fire span{width:24px;height:24px}
+@media(max-width:639px){.ld-editorial #accueil .ld-hero-conversion{max-width:none;gap:10px;margin-top:26px}.ld-editorial #accueil .ld-hero-conversion .ld-hero-wa{min-height:52px;font-size:15px}.ld-editorial #accueil .ld-hero-conversion button.ld-tarifs-fire{min-height:52px;font-size:15px}}
+@media(prefers-reduced-motion:reduce){.ld-editorial #accueil .ld-hero-wa{transition:none}}
