@@ -27,8 +27,37 @@
 <link rel="stylesheet" href="/assets/immersive.css">
 <link rel="stylesheet" href="/assets/market-ticker.css">
 <link rel="stylesheet" href="/assets/ticker.css">
+<link rel="stylesheet" href="/assets/preloader.css">
+<script>
+(function () {
+  try {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || navigator.connection?.saveData) return;
+    var nav = performance.getEntriesByType('navigation')[0];
+    var reloading = nav && nav.type === 'reload';
+    var seen = sessionStorage.getItem('ld_preloader_seen_v1') === '1';
+    var internal = document.referrer && new URL(document.referrer).origin === location.origin;
+    if (seen && internal && !reloading) return;
+    document.documentElement.classList.add('ld-preloading');
+    window.setTimeout(function () { document.documentElement.classList.remove('ld-preloading') }, 2400);
+  } catch (_) { document.documentElement.classList.remove('ld-preloading') }
+})();
+</script>
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased">
+<div id="ld-preloader" class="ld-preloader" role="status" aria-label="Chargement de Lavage Daba">
+  <div class="ld-preloader__inner">
+    <div class="ld-preloader__mark" aria-hidden="true"><img src="https://i.postimg.cc/SKjprXYx/Logo-de-lavage-auto-eclatant.png" alt="" width="66" height="66" decoding="async"></div>
+    <p class="ld-preloader__eyebrow">AUTO CARE · CASABLANCA</p>
+    <p class="ld-preloader__brand">Lavage<span>Daba</span></p>
+    <p class="ld-preloader__sub">L'art du lavage à domicile · 🇮🇹</p>
+    <div class="ld-preloader__line" role="progressbar" aria-label="Chargement du site" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+      <span class="ld-preloader__fill" data-ld-preload-fill></span>
+    </div>
+    <div class="ld-preloader__meta"><span class="ld-preloader__loading">Préparation de votre expérience</span><span class="ld-preloader__percent" data-ld-preload-percent>00%</span></div>
+    <button class="ld-preloader__skip" type="button" data-ld-preload-skip>Passer</button>
+  </div>
+</div>
+
 <div class="ld-market-ticker" role="region" aria-label="Services Lavage Daba à Casablanca"><div class="ld-market-ticker__track"><div class="ld-market-ticker__set"><span>LavageDaba</span><span>Lavage à domicile Casablanca</span><span>Brillance premium</span><span>Nettoyage intérieur</span><span>Nettoyage extérieur</span><span>Produits italiens 🇮🇹</span><span>Lavage voiture Casablanca</span><span>Réservation WhatsApp</span></div><div class="ld-market-ticker__set" aria-hidden="true"><span>LavageDaba</span><span>Lavage à domicile Casablanca</span><span>Brillance premium</span><span>Nettoyage intérieur</span><span>Nettoyage extérieur</span><span>Produits italiens 🇮🇹</span><span>Lavage voiture Casablanca</span><span>Réservation WhatsApp</span></div></div></div>
 
   <header class="bg-white border-b border-slate-200 sticky top-0 z-40">
@@ -128,5 +157,6 @@
     </div>
   </footer>
 <script defer src="/assets/immersive.js"></script>
+<script defer src="/assets/preloader.js"></script>
 </body>
 </html>
