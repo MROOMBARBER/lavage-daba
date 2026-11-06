@@ -20,7 +20,8 @@ frameAt(0);
 function setupReveal(gsap,ScrollTrigger){$$('[data-ld-words]').forEach(el=>{if(el.dataset.splitDone)return;el.dataset.splitDone='1';const nodes=[...el.childNodes];const frag=document.createDocumentFragment();for(const node of nodes){if(node.nodeType!==Node.TEXT_NODE){frag.append(node.cloneNode(true));continue}const parts=node.textContent.split(/(\s+)/);for(const part of parts){if(!part)continue;if(/^\s+$/.test(part)){frag.append(document.createTextNode(part));continue}const o=document.createElement('span');o.className='ld-word';const inside=document.createElement('span');inside.textContent=part;o.append(inside);frag.append(o)}}el.replaceChildren(frag);const words=$$('.ld-word > span',el);gsap.from(words,{yPercent:110,stagger:.045,duration:1,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 89%',once:true}})});
 $$('.ld-mask img').forEach(img=>{gsap.fromTo(img,{scale:1.18},{scale:1,duration:1.5,ease:'power2.out',scrollTrigger:{trigger:img,start:'top 90%',once:true}})})}
 async function motion(){
-if(!motionOK)return;
+// Keep mobile loading fast: show all content immediately without remote GSAP/Lenis libraries.
+if(!motionOK||narrow.matches)return;
 try{
 await loadScript('https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js');
 await loadScript('https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js');
