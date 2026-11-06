@@ -174,3 +174,7 @@ body.ld-editorial{background:var(--cream);overflow-x:clip}
  body.ld-editorial #accueil .ld-hero-conversion .ld-hero-wa{font-size:10px!important}
  body.ld-editorial #accueil .ld-hero-conversion button.ld-tarifs-fire{font-size:10px!important}
 }
+
+/* Booking conversion: lead visitors directly to Pro Gold / 150 DH. */
+#pro-gold{scroll-margin-top:105px}
+@media(max-width:767px){#pro-gold{scroll-margin-top:88px}}
