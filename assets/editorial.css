@@ -178,3 +178,12 @@ body.ld-editorial{background:var(--cream);overflow-x:clip}
 /* Booking conversion: lead visitors directly to Pro Gold / 150 DH. */
 #pro-gold{scroll-margin-top:105px}
 @media(max-width:767px){#pro-gold{scroll-margin-top:88px}}
+
+/* Lavage Daba - Éclat / 100 DH attraction and direct price navigation */
+#pack-eclat{scroll-margin-top:105px}
+.ld-editorial #pack-eclat{box-shadow:0 16px 48px rgba(8,145,178,.18),0 4px 18px rgba(8,145,178,.09);isolation:isolate}
+.ld-editorial #pack-eclat::before{content:"";position:absolute;inset:-2px;pointer-events:none;border-radius:25px;border:2px solid rgba(6,182,212,.42);box-shadow:0 0 23px rgba(6,182,212,.21);z-index:-1}
+.ld-editorial #pack-eclat h3{letter-spacing:-.035em}
+.ld-editorial #pack-eclat a:focus-visible{outline:3px solid #155e75;outline-offset:3px}
+@media(max-width:767px){#pack-eclat{scroll-margin-top:86px}.ld-editorial #pack-eclat{margin-top:4px}}
+@media(prefers-reduced-motion:reduce){.ld-editorial #pack-eclat *{animation:none!important}}
